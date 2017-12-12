@@ -1,0 +1,1 @@
+C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\SeatBeltClient.csproj;x86
