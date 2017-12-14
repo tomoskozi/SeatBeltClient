@@ -28,6 +28,10 @@ namespace SeatBeltClient
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private const string ServerUrl = "http://91.134.196.77:8101/";
+        private const string SeatBeltUrl = ServerUrl + "seatbelt";
+        private const string SeatBeltId = "5a180c10857aba0001b937f4";
+
         private const int BUTTON_PIN = 5;
         private const int LED_PIN = 6;
         private GpioPin ledPin;
@@ -71,7 +75,7 @@ namespace SeatBeltClient
             {
                 InitGPIO();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 GpioStatus.Text += "There is no GPIO controller on this device.\n";
             }
@@ -81,18 +85,17 @@ namespace SeatBeltClient
 
         private async void InitSeatBelt()
         {
-            try {
-                SeatBeltGET sb = await GetSeatbeltStatusAsnyc("5a180c10857aba0001b937f4");
+            try
+            {
+                await SetSeatBeltStatusAsync(SeatBeltId, false);
+                SeatBeltGET sb = await GetSeatBeltStatusAsnyc(SeatBeltId);
                 BeltConnected = sb.secured;
                 GpioStatus.Text += "Connected to remote.\n";
-
-                await SetSeatBeltStatusAsync("5a180c10857aba0001b937f4", true);
-            } catch (Exception e)
+            }
+            catch (Exception)
             {
-                var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                {
-                    GpioStatus.Text += "Remote connection failed!\n";
-                });
+                GpioStatus.Text += "Remote connection failed!\n";
+                BeltConnected = false;
             }
         }
 
@@ -110,7 +113,7 @@ namespace SeatBeltClient
             }
             else
             {
-                GpioStatus.Text = "";
+                GpioStatus.Text = "GPIO controller found. Prepare for take-off!\n";
             }
 
             ledPin = gpio.OpenPin(LED_PIN);
@@ -135,23 +138,44 @@ namespace SeatBeltClient
             buttonPin.ValueChanged += buttonPin_ValueChanged;
         }
 
-        private void buttonPin_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs e)
+        private async void buttonPin_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs e)
         {
-            // need to invoke UI updates on the UI thread because this event
-            // handler gets invoked on a separate thread.
-            var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            if (e.Edge == GpioPinEdge.FallingEdge)
             {
-                // toggle the state of the LED every time the button is pressed
-                if (e.Edge == GpioPinEdge.FallingEdge)
+                // need to invoke UI updates on the UI thread because this event
+                // handler gets invoked on a separate thread.
+                var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                 {
+                    // toggle the state of the LED every time the button is pressed
                     BeltConnected = true;
-                }
+                });
 
-                if (e.Edge == GpioPinEdge.RisingEdge)
+                try
+                {
+                    SetSeatBeltStatusAsync(SeatBeltId, true);
+                }
+                catch (Exception)
+                {
+                    // nothing to do
+                }
+            }
+
+            if (e.Edge == GpioPinEdge.RisingEdge)
+            {
+                var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                 {
                     BeltConnected = false;
+                });
+
+                try
+                {
+                    SetSeatBeltStatusAsync(SeatBeltId, false);
                 }
-            });
+                catch (Exception)
+                {
+                    // nothing to do
+                }
+            }
         }
 
         private async Task<T> GetRequestAsnyc<T>(string uri)
@@ -173,26 +197,23 @@ namespace SeatBeltClient
             }
         }
 
-        private const string ServerUrl = "http://91.134.196.77:8101/";
-        private const string SeatBeltUrl = ServerUrl + "seatbelt";
-
-        public async Task<SeatBeltGET> GetSeatbeltStatusAsnyc(string id)
+        public async Task<SeatBeltGET> GetSeatBeltStatusAsnyc(string id)
         {
             string query = SeatBeltUrl + "?id=" + id;
-            var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            /*var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 GpioStatus.Text += query + "\n";
-            });
+            });*/
             return await GetRequestAsnyc<SeatBeltGET>(query);
         }
 
         public async Task SetSeatBeltStatusAsync(string id, bool secured)
         {
             string query = SeatBeltUrl + "?id=" + id;
-            var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            /*var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 GpioStatus.Text += query + "\n";
-            });
+            });*/
 
             await PostRequestAsnyc(query, new SeatBeltPOST()
             {
