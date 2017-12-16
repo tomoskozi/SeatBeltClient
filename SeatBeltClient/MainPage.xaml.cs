@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -8,6 +9,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Gpio;
+using Windows.Devices.WiFi;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
@@ -28,7 +30,7 @@ namespace SeatBeltClient
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const string ServerUrl = "http://91.134.196.77:8101/";
+        private const string ServerUrl = "http://192.168.1.196:8080/";//"http://91.134.196.77:8101/";
         private const string SeatBeltUrl = ServerUrl + "seatbelt";
         private const string SeatBeltId = "5a180c10857aba0001b937f4";
 
@@ -40,6 +42,9 @@ namespace SeatBeltClient
         private SolidColorBrush grayBrush = new SolidColorBrush(Windows.UI.Colors.LightGray);
 
         private bool beltConnected;
+
+        private WiFiAdapter firstAdapter;
+
         public bool BeltConnected
         {
             get { return beltConnected; }
@@ -50,18 +55,18 @@ namespace SeatBeltClient
                 {
                     if (ledPin != null)
                     {
-                        ledPin.Write(GpioPinValue.High);
+                        ledPin.Write(GpioPinValue.Low);
                     }
-                    LED.Fill = redBrush;
+                    LED.Fill = grayBrush;
                     BeltStatus.Text = "Secured";
                 }
                 else
                 {
                     if (ledPin != null)
                     {
-                        ledPin.Write(GpioPinValue.Low);
+                        ledPin.Write(GpioPinValue.High);
                     }
-                    LED.Fill = grayBrush;
+                    LED.Fill = redBrush;
                     BeltStatus.Text = "Not Secured";
                 }
             }
@@ -80,7 +85,32 @@ namespace SeatBeltClient
                 GpioStatus.Text += "There is no GPIO controller on this device.\n";
             }
 
+            try
+            {
+                //InitWifi();
+            }
+            catch (Exception)
+            {
+                WifiStatus.Text += "Cannot initialise WiFi\n";
+            }
+
             InitSeatBelt();
+        }
+
+        private async void InitWifi()
+        {
+            // Not part of the sample:
+            var result = await WiFiAdapter.FindAllAdaptersAsync();
+            if (result.Count >= 1)
+            {
+                firstAdapter = result[0];
+                // rest of the code
+                WifiStatus.Text += result.ToString();
+            }
+            else
+            {
+                WifiStatus.Text += "No adapters are present\n";
+            }
         }
 
         private async void InitSeatBelt()

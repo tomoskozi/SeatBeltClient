@@ -27604,11 +27604,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mtomoskozi\\source\\repos\\SeatBeltClient\\SeatBeltClient\\SeatBeltClient.csproj",
+      "projectUniqueName": "c:\\Users\\mtomoskozi\\source\\repos\\SeatBeltClient\\SeatBeltClient\\SeatBeltClient.csproj",
       "projectName": "SeatBeltClient",
-      "projectPath": "C:\\Users\\mtomoskozi\\source\\repos\\SeatBeltClient\\SeatBeltClient\\SeatBeltClient.csproj",
+      "projectPath": "c:\\Users\\mtomoskozi\\source\\repos\\SeatBeltClient\\SeatBeltClient\\SeatBeltClient.csproj",
       "packagesPath": "C:\\Users\\mtomoskozi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mtomoskozi\\source\\repos\\SeatBeltClient\\SeatBeltClient\\obj\\",
+      "outputPath": "c:\\Users\\mtomoskozi\\source\\repos\\SeatBeltClient\\SeatBeltClient\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

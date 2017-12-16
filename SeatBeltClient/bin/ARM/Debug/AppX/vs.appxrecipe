@@ -10,7 +10,7 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>dae1fdf6-63ac-4b09-957f-c7c4f9f0d8c1</PackageIdentityName>
     <PackageIdentityPublisher>CN=mtomoskozi</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>320CA76F3F2D8B67E27EA68EBB1BAD5D4BB1F70EBF37F9AD8E91AA10C91E0AFC</RegisteredManifestChecksum>
+    <LayoutDir>c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>A6BD9FDA9D8F86711E7856E0B26AD5B8D3A0FDFF9476600941ACF59139E23C69</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>dae1fdf6-63ac-4b09-957f-c7c4f9f0d8c1_1.0.0.0_arm__0byd2gv0rwhbc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>dae1fdf6-63ac-4b09-957f-c7c4f9f0d8c1_0byd2gv0rwhbc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>dae1fdf6-63ac-4b09-957f-c7c4f9f0d8c1</RegisteredPackageID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>False</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-12T15:25:01.859</Modified>
+      <Modified>2017-12-16T14:33:39.786</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\SeatBeltClient.exe">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\SeatBeltClient.exe">
       <PackagePath>entrypoint\SeatBeltClient.exe</PackagePath>
-      <Modified>2017-12-12T15:25:00.326</Modified>
+      <Modified>2017-12-16T14:33:39.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mtomoskozi\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -515,68 +515,68 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T21:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\5G_Germany_ Logo_200.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\5G_Germany_ Logo_200.png">
       <PackagePath>Assets\5G_Germany_ Logo_200.png</PackagePath>
       <Modified>2017-12-12T12:53:33.693</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\5G_Germany_ Logo_Logo quer Pfade.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\5G_Germany_ Logo_Logo quer Pfade.png">
       <PackagePath>Assets\5G_Germany_ Logo_Logo quer Pfade.png</PackagePath>
       <Modified>2017-12-12T10:51:14.573</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-12-08T08:29:40.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-12T12:53:33.693</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-08T08:29:40.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-08T08:29:40.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-08T08:29:40.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-08T08:29:40.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-08T08:29:40.149</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-12-08T14:44:12.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\SeatBeltClient.xr.xml">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\SeatBeltClient.xr.xml">
       <PackagePath>SeatBeltClient.xr.xml</PackagePath>
-      <Modified>2017-12-12T14:52:11.752</Modified>
+      <Modified>2017-12-14T15:17:12.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-11-10T17:15:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-12T14:52:19.444</Modified>
+      <Modified>2017-12-14T15:25:16.959</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\Core\SeatBeltClient.exe">
+    <AppxPackagedFile Include="c:\Users\mtomoskozi\source\repos\SeatBeltClient\SeatBeltClient\bin\ARM\Debug\Core\SeatBeltClient.exe">
       <PackagePath>SeatBeltClient.exe</PackagePath>
-      <Modified>2017-12-12T15:25:01.856</Modified>
+      <Modified>2017-12-16T14:33:39.783</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
